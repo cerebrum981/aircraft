@@ -54,10 +54,7 @@ APP.setMarkers = function(planes){
 
 			if(map.getBounds().contains({ lat:plane[i].Lat, lng:plane[i].Long })) {
 				
-				if(APP.google.marker[p]){ 
-					oldLng = APP.google.marker[p].getPosition().lng(); 
-					oldLat = APP.google.marker[p].getPosition().lat();
-				}
+				if(APP.google.marker[p]){ oldLng = APP.google.marker[p].getPosition().lng(); oldLat = APP.google.marker[p].getPosition().lat();}
 
 
 				var companyLogo, planeIco, fcn;
@@ -113,7 +110,7 @@ APP.setMarkers = function(planes){
 		}
 
 	};
-
+	//	APP.table.sort(sortArray("-Altitiude"));
 		document.getElementById('plane-list').innerHTML='';
 		APP.table.sort(lib.sortArray("-Altitiude"));
 
@@ -122,7 +119,8 @@ APP.setMarkers = function(planes){
 			var id = APP.table[i].id;
 			APP.tableHash[id] = APP.table[i]; 
 			var Alt = APP.table[i].Altitiude||'Unknown'
-
+			/*
+			var company = '<tr><td><img src="'+APP.table[i].company+'" alt="Company logo"> ';*/
 			if(APP.table[i].oldLng<APP.table[i].lng || (APP.table[i].oldLng>170 && APP.table[i].lng>-180)){
 				style = 'style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"';	
 			}
@@ -135,7 +133,7 @@ APP.setMarkers = function(planes){
 
   		setTimeout(function(){
   			lib.ajax.getJsonp(APP.json, 'getJsonp');
-  		},60*1000);
+  		},10*1000);
 }
 
 APP.googleMapLoad = function(position){
@@ -246,6 +244,7 @@ APP.ajaxHistory = function(){
 		$('#page-map').css({'display':'none'});
 		$('#page-info').css({'display':'table'});
 
+		//APP.pageInfo();
 	}
 
 }
