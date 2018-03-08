@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="./css/style.css"> 
+	<script src='./resources/jquery/jquery.js'></script>
+	<link rel="stylesheet" href="./resources/bootstrap/css/bootstrap.css"> 
+	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src='./js/app.js'></script>
+	<script src='./js/lib.js'></script>
+ 	<script src="./resources/googlemaps/googlemaps.js"></script>
+</head>
+<body>
+  <div id="page-map" style="display: none;">
+    <div id="app-map"></div>
+    <div id="plane-list-content">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Airplane Orientation</th>
+						<th>Altitude</th>
+						<th>Flight Code Number</th>
+					</tr>
+				</thead>
+				<tbody id="plane-list">
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+<div id="page-info">
+
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="error" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Error</h4>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    <div class="fullscreen-loading-rotate"></div>
+  </body>
+</html>
