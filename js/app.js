@@ -133,7 +133,7 @@ APP.setMarkers = function(planes){
 
   		setTimeout(function(){
   			lib.ajax.getJsonp(APP.json, 'getJsonp');
-  		},10*1000);
+  		},60*1000);
 }
 
 APP.googleMapLoad = function(position){
